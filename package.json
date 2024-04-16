@@ -2,9 +2,18 @@
   "name": "@gxcloud/typescript",
   "version": "0.1.1",
   "description": "",
-  "main": "lib/index.js",
+  "exports": {
+    "./loader": {
+      "import": "./lib/loader.js"
+    },
+    "./register": {
+      "import": "./lib/register.js",
+      "default": "./lib/register.js"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "keywords": [],
   "author": "Alexander Gauss <alexander.gauss.vienna@gmail.com>",
