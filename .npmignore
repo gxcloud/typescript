@@ -1,3 +1,4 @@
 .vscode
 eslint.config.mjs
 .prettierrc
+.github
