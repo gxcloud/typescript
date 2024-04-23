@@ -14,9 +14,6 @@
     },
     "./package.json": "./package.json"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": ["typescript", "node"],
   "author": "Alexander Gauss <alexander.gauss.vienna@gmail.com>",
   "repository": "https://github.com/gxcloud/typescript",
