@@ -18,8 +18,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Alexander Gauss <alexander.gauss.vienna@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^9.1.1",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
