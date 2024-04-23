@@ -1,9 +1,10 @@
 # @gxcloud/typescript
-<b>Load TypeScript directly from node without any obscure cli tool.</b>
+
+**Load TypeScript directly from node without any obscure cli tool.**
 
 TypeScript is the new de-facto standard for writing applications for nodejs or the web. Unfortunately node isn't able to run TypeScript natively without any precompilation or some obscure packages that try to implement their own AST instead of using a solid and battle tested solution.
 
-<b>@gxcloud/typescript</b> uses the new but still experimental [module hooks](https://nodejs.org/api/module.html#hooks) and a build pipeline using [esbuild](https://esbuild.github.io/) that compiles TypeScript to JavaScript on the fly and in memory.
+**@gxcloud/typescript** uses the new but still experimental [module hooks](https://nodejs.org/api/module.html#hooks) and a build pipeline using [esbuild](https://esbuild.github.io/) that compiles TypeScript to JavaScript on the fly and in memory.
 
 ## How to use it
 There are two options to use this package. You can either use the loader directly or with the register helper.
