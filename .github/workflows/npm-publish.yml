@@ -12,7 +12,7 @@ jobs:
     steps:
 
       # setup
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: 20
@@ -39,10 +39,10 @@ jobs:
 
       # Create the release using GitHub CLI
       - name: Create release
-        uses: actions/checkout@v3  # Need a fresh checkout for gh CLI
+        uses: actions/checkout@v4  # Need a fresh checkout for gh CLI
         with:
           persist-credentials: false  # Avoid persisting credentials
-        run: |
+      - run: |
           gh release create ${{ env.VERSION }}  # Create release with version
           # Optional: Add release notes from a file
           # gh release edit ${{ env.VERSION }} --notes-file release_notes.md  
