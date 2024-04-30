@@ -1,24 +1,52 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
-
-name: Node.js Package
+name: Build and publish npm package
 
 on:
   push:
     branches:
-      - 'main'
+      - "main"
 
 jobs:
 
   publish-npm:
     runs-on: ubuntu-latest
     steps:
+
+      # setup
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
+
+      # install dependencies
       - run: npm ci
+
+      # run tests
+      # - name: run tests
+      #   run: node --test
+
+      # Extract version from package.json
+      - name: Extract package version
+        run: echo "VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
+
+      # Create the tag
+      - name: Create tag
+        run: git tag ${{ env.VERSION }}
+
+        # Push the tag
+      - name: Push the tag
+        run: git push origin ${{ env.VERSION }}
+
+      # Create the release using GitHub CLI
+      - name: Create release
+        uses: actions/checkout@v3  # Need a fresh checkout for gh CLI
+        with:
+          persist-credentials: false  # Avoid persisting credentials
+        run: |
+          gh release create ${{ env.VERSION }}  # Create release with version
+          # Optional: Add release notes from a file
+          # gh release edit ${{ env.VERSION }} --notes-file release_notes.md  
+
       - run: npm publish --scope public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
