@@ -13,7 +13,7 @@ There are two options to use this package. You can either use the loader directl
 node --loader @gxcloud/typescript/loader ./path/to/code.ts
 
 # register
-node --import @gxcloud/typescript/register
+node --import @gxcloud/typescript/register ./path/to/code.ts
 ```
 
 The difference is, that when using the ```--loader```, you will get an error message that this is still experimental. In fact, it is actually just an alias for ```--experimental-loader```.
