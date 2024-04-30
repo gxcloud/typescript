@@ -15,9 +15,9 @@ export async function resolve(specifier, context, nextResolve) {
     fileNameExtension = ".ts";
   }
 
-    if (!typescriptExtensions.has(fileNameExtension)) {
-      return nextResolve(specifier);
-    }
+  if (!typescriptExtensions.has(fileNameExtension)) {
+    return nextResolve(specifier);
+  }
 
   const { url } = await nextResolve(specifier);
 
