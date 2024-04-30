@@ -28,8 +28,7 @@ The exact error message looks like the following:
 The register helper uses exactly this code suggestion.
 
 ## Limitations
-- Only ESM is supported at the moment.
-- When importing files, you have to specify the file name extension, otherwise the module cannot be resolved.
+- Only TypeScript is supported. If you have an import for a none ts file somewhere, it will crash.
 
 ## Thanks
 Thanks to Evan Wallace for creating and maintaining [esbuild](https://esbuild.github.io/). Without this sophisticated and extremly fast bundler, writing TypeScript would be a pain!
