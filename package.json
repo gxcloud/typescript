@@ -1,6 +1,6 @@
 {
   "name": "@gxcloud/typescript",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Execute TypeScript directly from node",
   "type": "module",
   "exports": {
